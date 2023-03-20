@@ -1,31 +1,62 @@
-// ask the user for the first number 
-// ask the user for the second number 
-// ask the user for the operation 
-// perform the operation 
-// display the result of the operation 
+// ask the user for the first number
+// ask the user for the second number
+// ask the user for the operation
+// perform the operation
+// display the result of the operation
 
 const readline = require('readline-sync');
 
-console.log("Welcome to the Calculator!");
+function prompt(msg) {
+  console.log(`=> ${msg}`);
+}
 
-console.log("What is the first number?");
-let num1 = parseInt(readline.question());
+function invalidNumber(num) {
+  return num.trimStart() === '' || Number.isNaN(Number(num));
+}
 
-console.log("What is the second number?");
-let num2 = parseInt(readline.question());
+prompt("Welcome to the Calculator!");
 
-console.log("What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide");
+prompt("What is the first number?");
+let num1 = readline.question();
+
+while (invalidNumber(num1)) {
+  prompt("Hmmm... that doesn't look like a valid number.");
+  num1 = readline.question();
+}
+
+prompt("What is the second number?");
+let num2 = readline.question();
+
+while (invalidNumber(num2)) {
+  prompt("Hmmm... that doesn't look like a valid number.");
+  num2 = readline.question();
+}
+
+prompt("What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide");
 let operation = readline.question();
 
-let output;
-if (operation === '1') {
-  output = num1 + num2;
-} else if (operation === '2') {
-  output = num1 - num2;
-} else if (operation === '3') {
-  output = num1 * num2;
-} else if (operation === '4') {
-  output = num1 / num2;
-} 
+while (!['1', '2', '3', '4'].includes(operation)) {
+  prompt("Operation must be 1, 2, 3, or 4!");
+  operation = readline.question();
+}
 
-console.log(`The result is ${output}.`);
+num1 = Number(num1);
+num2 = Number(num2);
+let output;
+switch (operation) {
+  case '1':
+    output = num1 + num2;
+    break;
+  case '2':
+    output = num1 - num2;
+    break;
+  case '3':
+    output = num1 * num2;
+    break;
+  case '4':
+    output = num1 / num2;
+    output = output.toFixed(3);
+    break;
+}
+
+prompt(`The result is ${output}.`);
