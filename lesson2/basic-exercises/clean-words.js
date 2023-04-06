@@ -1,26 +1,24 @@
 function cleanUp(str) {
-    str = str.split('');
-
-    for (let i = 0; i < str.length; i++) {
-        if (!(/[a-z]/gi).test(str[i])) {
-            str[i] = ' ';
-        } 
+  str = str.split('');
+  for (let idx = 0; idx < str.length; idx++) {
+    if (!(/[a-z]/gi).test(str[idx])) {
+      str[idx] = ' ';
     }
-
-    let i = 0;
-    while (i < str.length) {
-        if (str[i] === ' ' && str[i + 1] === ' ') {
-            str.splice(i, 1);
-            i = 0;
-        } else {
-            i += 1;
-        }
+  }
+  let idx = 0;
+  while (idx < str.length) {
+    if (str[idx] === ' ' && str[idx + 1] === ' ') {
+      str.splice(idx, 1);
+      idx = 0;
+    } else {
+      idx += 1;
     }
-    return str.join('');
+  }
+  return str.join('');
 }
 
 console.log(cleanUp("---what's my +*& line?"));
 
-function cleanUp(text) {
-    return text.replace(/[^a-z]/gi, " ").replace(/\s+/gi, " ");
+function cleanUpRefac(text) {
+  return text.replace(/[^a-z]/gi, " ").replace(/\s+/gi, " ");
 }

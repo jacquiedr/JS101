@@ -1,8 +1,8 @@
 function utf16Value(str) {
-    let sum = 0;
-    for (let i = 0; i < str.length; i++) {
-        sum += str.charCodeAt(i);
-    }
-    return sum;
+  let sum = 0;
+  for (let idx = 0; idx < str.length; idx++) {
+    sum += str.charCodeAt(idx);
+  }
+  return sum;
 }
 

@@ -1,15 +1,15 @@
-function negative(n) {
-    if(n >= 0) {
-        return n * -1;
-    } 
-    return n;
+function negative(num) {
+  if (num >= 0) {
+    return num * -1;
+  }
+  return num;
 }
 // Other ways to solve this number 
 function negativeRefactored(number) {
-    return Math.abs(number) * -1;
+  return Math.abs(number) * -1;
 }
 
-function negativeV3(n) {
-    return n >= 0 ? Math.abs(n) * -1 : n;
+function negativeV3(num) {
+  return num >= 0 ? Math.abs(num) * -1 : num;
 }
 

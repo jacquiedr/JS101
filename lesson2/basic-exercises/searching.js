@@ -1,3 +1,4 @@
+/* eslint-disable radix */
 let rl = require('readline-sync');
 
 let number1 = parseInt(rl.question('Enter the 1st number: '));
@@ -10,14 +11,14 @@ let number6 = parseInt(rl.question('Enter the last number: '));
 let numArray = [number1, number2, number3, number4, number5];
 
 if (numArray.includes(number6)) {
-    console.log(`The number ${number6} appears in ${numArray}.`);
+  console.log(`The number ${number6} appears in ${numArray}.`);
 } else {
-    console.log(`The number ${number6} does not appear in ${numArray}.`);
+  console.log(`The number ${number6} does not appear in ${numArray}.`);
 }
 
-// Further exploration 
+// Further exploration
 function isIncluded(arr, val) {
-    return arr.some(e => e > val);
+  return arr.some(el => el > val);
 }
 
 console.log(isIncluded([2, 3, 4, 65, 4], 25));

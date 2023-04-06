@@ -1,3 +1,3 @@
-function isOdd(n) {
-    return (Math.abs(n) % 2 === 1);
+function isOdd(number) {
+  return (Math.abs(number) % 2 === 1);
 }

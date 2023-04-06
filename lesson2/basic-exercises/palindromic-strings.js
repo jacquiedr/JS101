@@ -1,8 +1,8 @@
 function isPalindrome(str) {
     let chars = str.split('');
     let reversedChars = str.split('').reverse();
-    for (let i = 0; i < chars.length; i++) {
-        if(chars[i] !== reversedChars[i]) {
+    for (let index = 0; index < chars.length; index++) {
+        if(chars[index] !== reversedChars[index]) {
             return false;
         }
     }
@@ -16,6 +16,6 @@ function isPalindromeFE(string) {
     return string === string.split('').reverse().join('');
 }
 
-let n = String(00100).split('');
+let number = String(00100).split('');
 
-console.log(isPalindromeFE(n));
+console.log(isPalindromeFE(number));

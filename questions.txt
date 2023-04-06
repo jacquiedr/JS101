@@ -1,0 +1,311 @@
+Quiz for Sagar
+
+1. What does the following code output?
+a) console.log(1/-0);
+b) console.log(-0 === 0);
+c) console.log(typeof null);
+
+2. What is a destructive method? What are examples of destructive methods?
+
+3. What is implicit type coercion? What are examples of implicit type coercion?
+
+4. Create a function that takes a string as the input and returns only the first half of the string. 
+
+5. How would you take this array of numbers and reverse it without mutating it?
+   let numbers = [1, 5, 7, 3, 8];
+
+6. How would you check if this array includes the number 3?
+   let array = ['hi', '42', 600, 'foo', 'bye'];
+
+7. How would you check if this object includes the key 'ben'?
+   let ages = { ben: 21, jacquie: 23, marc: 65 };
+
+8. How would you create an array that only contains marc's name and age (the key-value pair)?
+
+9. What is escape notation and when would we use it?
+
+10. Which of the following are not pass-by-reference?
+
+a) function myFunc(num) {
+      return num * num;
+   }
+   myFunc(6);
+
+b) function myFunc(num) {
+      let num = 6;
+   }
+   myFunc([1, 2, 3]);
+
+c) function myFunc(num) {
+      let num = 6;
+      return num;
+   }
+   myFunc([1, 2, 3]);
+
+d) function myFunc(num) {
+      return [1, 2, 3];
+   }
+   myFunc({ obj: a: 1, b: 2 });
+
+e) let myFunc = [1, 2, 3];
+   let foo = myFunc;
+
+
+Answers:
+1. a) -Infinity, when we divide any non-zero number by 0, the answer is considered to be infinitely large, because we are essentially 
+      asking how many times 0 can fit into a non-zero number, and the answer is undefined or infinite.
+   b) false, JS coerces -0 into 0 and sees the two values as being equal. We must use a method like Object.values to check if a value is -0.
+   c) object, this is an error on JS's part. It can't read null as being a primitive value so to check if a value is null, use strict equality
+      operator.
+
+2. A method that modifies the original object passed in. Instead of creating a copy with the modified state, it modifies the original object.
+
+3. Implicit type coercion is when we are dealing with two different types so JS changes one of the values so they are of the same type. It is 
+   regarded as bad practice to rely on JS to coerce data for us. Examples of implicit type coercion are using the loose equality operator, the binary 
+   + operator, or the relational operators. 
+
+4. 
+function firstHalfOfString(string) {
+  let middle = Math.floor(string.length / 2);
+  return string.slice(0, middle);
+}
+
+5. let reversedArray = numbers.slice().reverse() or let reversedArray = [...numbers].sort((num1, num2) => num2 - num1);
+
+6. array.includes(3); // false
+
+7. ages.hasOwnProperty('ben'); // true 
+
+8. let marc = Object.fromEntries(ages).filter(pair => pair[0] === 'marc').shift(); // ['marc', 65]
+
+9. Escape notation is used to represent certain characters in a string literal that are difficult or impossible to type directly
+   in code. Used to represent special characters like newline, tab, quotation marks, backslash...
+
+10. a) and e) are not pass-by-reference. The function is a) gets a primitive value passed in as an argument and returns a number. The code in b) does not 
+    refer to a function at all so we cannot use pass-by-reference or pass-by-value. 
+
+
+
+STUDY SESSION WITH SAGAR 
+
+/*
+Question 1- 
+
+let arr = ["Grace", "Clare", "Trevor"];
+
+let newArr = arr.map((name) => {
+  return console.log(name);
+});
+
+What is the return value of newArr?
+
+Answer: [undefined, undefined, undefined]
+
+*/
+/*
+let arr = ["Grace", "Clare", "Trevor"];
+
+let newArr = arr.map((name) => {
+  return console.log(name);
+});
+
+console.log(newArr);
+*/
+
+/*
+Question 2 - 
+let arr = ["Grace", "Clare", "Trevor"];
+
+let newArr = arr.map((name) => {
+  console.log(name);
+});
+
+What is the return value of newArr?
+
+Answer:
+
+
+*/
+/*
+let arr = ["Grace", "Clare", "Trevor"];
+
+let newArr = arr.map((name) => {
+  console.log(name);
+});
+
+console.log(newArr);
+*/
+
+/*
+10. Which of the following are not pass-by-reference?
+
+a) function myFunc(num) {
+      return num * num;
+   }
+   myFunc(6);
+
+b) function myFunc(num) {
+      let num = 6;
+   }
+   myFunc([1, 2, 3]);
+
+c) function myFunc(num) {
+      let num = 6;
+      return num;
+   }
+   myFunc([1, 2, 3]);
+
+d) function myFunc(num) {
+      return [1, 2, 3];
+   }
+   myFunc({ obj: a: 1, b: 2 });
+
+e) let myFunc = [1, 2, 3];
+   let foo = myFunc;
+*/ 
+/*
+let arr = [1, 2, 3];
+let newArr = arr;
+console.log(newArr == [1, 2, 3]);
+*/
+
+/*
+
+Question 3- 
+let arr = [1, 2, 3, 4, 5];
+
+let newArr = arr.forEach(function(num) {
+  return num + 1;
+});
+
+What is the return value of newArr?
+
+Answer: 
+newArr = 
+*/
+/*
+let arr = [1, 2, 3, 4, 5];
+let newArray = [];
+/*
+arr.forEach(function(num) {
+  newArray.push(num + 1);
+});
+*/
+/*
+let newArr = arr.map(number => number + 1);
+
+console.log(newArr);
+*/
+
+
+/*
+How would you take this array of numbers and reverse it without mutating it?
+let numbers = [1, 5, 7, 3, 8];
+*/
+/*
+let numbers = [1, 5, 7, 3, 8];
+// Copy of numbers array 
+let copyOfNumbers = numbers.slice().reverse();
+
+console.log(numbers);
+console.log(copyOfNumbers);
+*/
+
+/*
+7. How would you check if this object includes the key 'ben'?
+   let ages = { ben: 21, jacquie: 23, marc: 65 };
+*/
+let ages = { ben: 21, jacquie: 23, marc: 65 };
+let result = false;
+for (let key in ages) {
+  if (key === 'ben') {
+    result = true;
+    break;
+  }
+}
+
+console.log(result);
+
+console.log(ages.hasOwnProperty('ben'));
+
+/*
+4. Create a function that takes a string as the input and returns only the first half of the string. 
+*/
+/*
+function firstHalfOfString(str) {
+  let stringLength = str.length;
+  return str.substring(0, Math.floor(stringLength / 2));
+}
+
+console.log(firstHalfOfString("Hello Sagar Srikant")); // Hello Sa
+*/
+
+/*
+Question 8 -
+
+//Given the following data structure, write some code to return an array which contains only the objects where all the numbers are even.
+let arr = [
+  { a: [1, 2, 3] },
+  { b: [2, 4, 6], c: [3, 6], d: [4] },
+  { e: [8], f: [6, 10] },
+];
+
+console.log(objectsWithEvenNumbers(arr)); // [ { e: [ 8 ], f: [ 6, 10 ] } ]
+*/
+
+let arr = [
+  { a: [1, 2, 3] },
+  { b: [2, 4, 6], c: [3, 6], d: [4] },
+  { e: [8], f: [6, 10] },
+];
+
+
+// loop through array 
+//  iterate over object
+//  loop through object elements
+//    check if element is odd
+//      if odd, break loop
+//      if at the end of the object, return that array
+/*
+function objectsWithEvenNumbers(arr) {
+  for (let index = 0; index < arr.length; index++) {
+    for (let key in arr[index]) {
+      let i = 0;
+      while (i != key.length) {
+        if (key[index][i] % 2 === 1) {
+          break;
+        }
+        i++;
+      }
+      if (i === key.length) {
+        return key;
+      }
+    }
+  }
+}
+*/
+
+function objectsWithEvenNumbers(arr) {
+  let newArr = [];
+
+  for (let i = 0; i < arr.length; i += 1) {
+    let object = arr[i];
+    let count = 0;
+
+    for (let key in object) {
+      let subArr = object[key];
+
+      if (subArr.every(number => number % 2 === 0)) {
+        count += 1;
+      }
+    }
+
+    if (count === Object.keys(object).length) {
+      newArr.push(object);
+    }
+  }
+
+  return newArr;
+}
+
+console.log(objectsWithEvenNumbers(arr)); // [ { e: [ 8 ], f: [ 6, 10 ] } ]

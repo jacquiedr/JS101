@@ -1,23 +1,23 @@
 function isLeapYear(year) {
-    return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
+  return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
 }
 
-// Further Exploration 
+// Further Exploration
 function isLeapYearOther(year) {
-    if (year % 4 === 0) {
-      if (year % 100 === 0 && year % 400 === 0) return true;
-      else if (year % 100 === 0 && year % 400 !== 0) return false;
-      else return true;
-    }
-    return false;
+  if (year % 4 === 0) {
+    if (year % 100 === 0 && year % 400 === 0) return true;
+    else if (year % 100 === 0 && year % 400 !== 0) return false;
+    else return true;
+  }
+  return false;
 }
 
 // Part 2
 function isLeapYearP2(year) {
-    if (year > 1752) {
-        return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
-    }
-    return year % 4 === 0;
+  if (year > 1752) {
+    return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
+  }
+  return year % 4 === 0;
 }
 
 // Further Exploration -> Research leap years! From: https://www.timeanddate.com/date/chinese-leap-year.html && https://www.timeanddate.com/date/leapyear.html 

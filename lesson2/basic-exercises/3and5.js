@@ -1,11 +1,11 @@
-function multisum(n) {
-    let sum = 0;
-    for (let i = 1; i <= n; i++) {
-        if (i % 3 === 0 || i % 5 === 0) {
-            sum += i;
-        }
+function multisum(number) {
+  let sum = 0;
+  for (let index = 1; index <= number; index++) {
+    if (index % 3 === 0 || index % 5 === 0) {
+      sum += index;
     }
-    return sum;
+  }
+  return sum;
 }
 
-console.log(multisum(1000))
+console.log(multisum(1000));
